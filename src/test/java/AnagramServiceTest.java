@@ -31,6 +31,8 @@ public class AnagramServiceTest {
 
         //when-then
         assertEquals(anagramService.getAllKnownAnagrams("abc"), Set.of("a b c", "bca"));
+        assertEquals(anagramService.getAllKnownAnagrams("a b c"), Set.of("abc", "bca"));
+        assertEquals(anagramService.getAllKnownAnagrams("bca"), Set.of("abc", "a b c"));
         assertTrue(anagramService.getAllKnownAnagrams("abd").isEmpty());
         assertTrue(anagramService.getAllKnownAnagrams("").isEmpty());
     }
